@@ -13,9 +13,7 @@
 
 ![ev 10](https://user-images.githubusercontent.com/51414398/93919634-55c5f080-fce4-11ea-8804-413551eb01c0.PNG)
 
-<summary>
-# Registering and entering the data in the bank.
- </summary>
+<summary>Registering and entering the data in the bank</summary>
  
  
  ```
@@ -45,6 +43,33 @@
         segunda_tela.show()
     except:
         print('Não foi possivel inserir os dados')
+
+```
+
+
+# Second Screen
+
+- On this second screen, the user will click on the button on the first screen to show the data that has been registered.
+
+![ev 10](https://user-images.githubusercontent.com/51414398/93921396-e56c9e80-fce6-11ea-9384-82ce0aeb3327.PNG)
+
+<summary> Listing the products </summary>
+
+```
+def listar():
+    primeira_tela.close()
+    terceira_tela.show()
+    cursor = banco.cursor()
+    comando_sql = (f"SELECT id, codigo, preco, descricao, tipo_categoria FROM produtos INNER JOIN categoria ON produtos.id = categoria.id_categoria;")
+    cursor.execute(comando_sql)
+    dados_lidos = cursor.fetchall()
+    # MOSTRANDO OS DADOS CADASTRADOS
+    terceira_tela.tableWidget.setRowCount(len(dados_lidos))
+    terceira_tela.tableWidget.setColumnCount(5)
+
+    for i in range(0, len(dados_lidos)):
+        for j in range(0, 5):
+            terceira_tela.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
 ```
 
