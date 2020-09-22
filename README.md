@@ -13,7 +13,7 @@
 
 ![ev 10](https://user-images.githubusercontent.com/51414398/93919634-55c5f080-fce4-11ea-8804-413551eb01c0.PNG)
 
-<summary>Registering and entering the data in the bank</summary>
+#### Registering and entering the data in the bank
  
  
  ```
@@ -53,7 +53,7 @@
 
 ![ev 10](https://user-images.githubusercontent.com/51414398/93921396-e56c9e80-fce6-11ea-9384-82ce0aeb3327.PNG)
 
-<summary> Listing the products </summary>
+#### Listing the products
 
 ```
 def listar():
@@ -73,4 +73,51 @@ def listar():
 
 ```
 
+# Third screen
 
+- In this third screen, the user will inform the product code that he wants to change and the new product data.
+
+
+![ev 10](https://user-images.githubusercontent.com/51414398/93921982-b571cb00-fce7-11ea-89b7-125cd594cc75.PNG)
+
+
+#### Updating products
+
+```
+def alterar():
+    codigo = str(quarta_tela.lineEdit.text())
+    descricao = str(quarta_tela.lineEdit_2.text())
+    preco = str(quarta_tela.lineEdit_3.text())
+    try:
+        cursor = banco.cursor()
+        comando_sql = (f"UPDATE produtos SET descricao = '{descricao}', preco = '{preco}' WHERE codigo = '{codigo}';")
+        cursor.execute(comando_sql)
+        banco.commit()
+        quarta_tela.close()
+        quinta_tela.show()
+    except:
+        print('Não foi possivel atualizar os dados')
+
+```
+
+# Fourth screen
+
+- In this fourth screen, the user will enter the product code that he wants to be deleted.
+
+![ev 10](https://user-images.githubusercontent.com/51414398/93922339-23b68d80-fce8-11ea-9bfa-24eea16cf7a9.PNG)
+
+#### Deleting products
+
+```
+def deletar():
+    codigo = str(sexta_tela.lineEdit.text())
+    try:
+        cursor = banco.cursor()
+        comando_sql = (f"DELETE FROM produtos WHERE codigo = '{codigo}';")
+        cursor.execute(comando_sql)
+        banco.commit()
+        sexta_tela.close()
+        setima_tela.show()
+    except:
+        print('Não foi possivel deletar o produto')
+```
