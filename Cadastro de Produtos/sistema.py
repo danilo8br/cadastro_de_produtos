@@ -5,10 +5,10 @@ import MySQLdb
 # CONECTANDO AO BANCO DE DADOS
 try:
     banco = MySQLdb.connect(
-        db='lojinha',
-        host='localhost',
-        user='root',
-        passwd='root')
+        db='nome do seu banco',
+        host='host',
+        user='seu usuario',
+        passwd='sua senha')
 except:
     print('Não foi possível se-conectar com o banco de dados')
 
