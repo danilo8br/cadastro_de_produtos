@@ -17,7 +17,7 @@
 Registering and entering the data in the bank.
  </summary>
  
- ´´´
+ ```
  def cadastrar():
     codigo = str(primeira_tela.lineEdit.text())
     preco = float(primeira_tela.lineEdit_2.text())
@@ -32,6 +32,7 @@ Registering and entering the data in the bank.
     else:
         categoria = 'Eletronicos'
 
+
     try:
         cursor = banco.cursor()
         comando_sql = (f"INSERT INTO produtos (codigo, preco, descricao) VALUES ('{codigo}', '{preco}', '{descricao}');")
@@ -44,6 +45,6 @@ Registering and entering the data in the bank.
     except:
         print('Não foi possivel inserir os dados')
 
-´´´
+```
 
 
