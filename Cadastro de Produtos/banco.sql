@@ -1,17 +1,17 @@
 # TABELA CATEGORIA
 CREATE TABLE categoria (
-	id_categoria INT NOT NULL AUTO_INCREMENT,
+    id_categoria INT NOT NULL AUTO_INCREMENT,
     tipo_categoria VARCHAR(20),
     CONSTRAINT PK_categoria PRIMARY KEY (id_categoria)
 );
 
 # TABELA PRODUTOS
 CREATE TABLE produtos (
-	id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     codigo VARCHAR(50),
     preco DECIMAL(8,2),
     descricao VARCHAR(50),
-	id_categoria INT,
+    id_categoria INT,
     CONSTRAINT PK_produtos PRIMARY KEY (id),
     CONSTRAINT PK_produtos_categoria FOREIGN KEY (id_categoria) REFERENCES categoria (id_categoria)
 );
