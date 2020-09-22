@@ -7,4 +7,10 @@
 
 # First screen
 
-- ![ev 10](https://user-images.githubusercontent.com/51414398/93919634-55c5f080-fce4-11ea-8804-413551eb01c0.PNG)
+
+- In this first screen, the user will put the product data and choose the category to register.
+
+
+![ev 10](https://user-images.githubusercontent.com/51414398/93919634-55c5f080-fce4-11ea-8804-413551eb01c0.PNG)
+
+
